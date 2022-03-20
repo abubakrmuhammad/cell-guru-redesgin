@@ -1,0 +1,45 @@
+.btn {
+  font-family: $font-text;
+  font-size: 1.4rem;
+  line-height: 1;
+  background: none;
+  border: 1px solid currentColor;
+  padding: 0.5rem;
+  cursor: pointer;
+  @extend %default-transtion;
+
+  &-primary {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border: none;
+
+    &:hover {
+      background-color: darken($color-primary, 7);
+    }
+  }
+
+  &-primary-ghost {
+    color: $color-primary;
+    background: none;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  &-raised {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+}

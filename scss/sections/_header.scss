@@ -1,0 +1,64 @@
+header {
+  .contactbar {
+    background-color: $color-black;
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
+
+    .cta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: end;
+      padding: 0 2rem;
+      font-size: 1.6rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $color-grey;
+        text-decoration: none;
+        @extend %default-transtion;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .titlebar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+
+    .logo {
+      color: $color-primary;
+      font-weight: 700;
+      font-size: 3.8rem;
+      font-family: $font-headings;
+    }
+
+    .nav {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-left: auto;
+
+      &-item {
+        list-style-type: none;
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      &-link {
+        color: $color-black;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

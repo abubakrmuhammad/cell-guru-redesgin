@@ -1,0 +1,47 @@
+$IMAGES_PATH: '../../assets/images';
+
+$color-primary: #0071ce;
+$color-black: #11161a;
+$color-white: #fff;
+$color-grey: #9ca3af;
+
+$font-text: 'Lato', sans-serif;
+$font-headings: 'Archivo', sans-serif;
+
+@mixin overlayedBgImage($img, $opacity: 0.25, $color: #000) {
+  background-image: linear-gradient(
+      rgba($color, $opacity),
+      rgba($color, $opacity)
+    ),
+    url('#{$IMAGES_PATH}/#{$img}');
+}
+
+%default-transtion {
+  transition: 0.2s all;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 76.875em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

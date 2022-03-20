@@ -1,0 +1,54 @@
+* {
+  &,
+  &::before,
+  &::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-text;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  // max-width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  // @include respond(sm) {
+  //   max-width: 540px;
+  // }
+
+  // @include respond(md) {
+  //   max-width: 720px;
+  // }
+
+  // @include respond(lg) {
+  //   max-width: 960px;
+  // }
+
+  // @include respond(xl) {
+  //   max-width: 1140px;
+  // }
+
+  // @include respond(xxl) {
+  //   max-width: 1320px;
+  // }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

@@ -1,0 +1,21 @@
+.hero {
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  @include overlayedBgImage('hero-image.jpg', 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .btn {
+    font-size: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    min-height: 5rem;
+    border-radius: 5px;
+  }
+}
