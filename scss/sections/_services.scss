@@ -1,0 +1,25 @@
+.services-section {
+  background-color: $color-bg-light-grey;
+
+  .title-2 {
+    margin-bottom: 3rem;
+  }
+
+  .service-category {
+    margin-bottom: 4rem;
+
+    .title-3-alt {
+      margin-bottom: 1rem;
+    }
+
+    .services {
+      display: flex;
+      gap: 4rem;
+      align-items: stretch;
+
+      .card {
+        flex: 1;
+      }
+    }
+  }
+}
