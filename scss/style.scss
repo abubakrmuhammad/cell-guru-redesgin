@@ -1,0 +1,211 @@
+$IMAGES_PATH: '../../assets/images';
+
+$color-primary: #0071ce;
+$color-black: #11161a;
+$color-white: #fff;
+$color-grey: #9ca3af;
+
+$font-text: 'Lato', sans-serif;
+$font-headings: 'Archivo', sans-serif;
+
+@mixin overlayedBgImage($img, $opacity: 0.25, $color: #000) {
+  background-image: linear-gradient(
+      rgba($color, $opacity),
+      rgba($color, $opacity)
+    ),
+    url('#{$IMAGES_PATH}/#{$img}');
+}
+
+%default-transtion {
+  transition: 0.2s all;
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-text;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  // max-width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  // @include respond(sm) {
+  //   max-width: 540px;
+  // }
+
+  // @include respond(md) {
+  //   max-width: 720px;
+  // }
+
+  // @include respond(lg) {
+  //   max-width: 960px;
+  // }
+
+  // @include respond(xl) {
+  //   max-width: 1140px;
+  // }
+
+  // @include respond(xxl) {
+  //   max-width: 1320px;
+  // }
+}
+
+.btn {
+  font-family: $font-text;
+  font-size: 1.4rem;
+  line-height: 1;
+  background: none;
+  border: 1px solid currentColor;
+  padding: 0.5rem;
+  cursor: pointer;
+  @extend %default-transtion;
+
+  &-primary {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border: none;
+
+    &:hover {
+      background-color: darken($color-primary, 7);
+    }
+  }
+
+  &-primary-ghost {
+    color: $color-primary;
+    background: none;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}
+
+header {
+  .contactbar {
+    background-color: $color-black;
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
+
+    .cta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: end;
+      padding: 0 2rem;
+      font-size: 1.6rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $color-grey;
+        text-decoration: none;
+        @extend %default-transtion;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .titlebar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+
+    .logo {
+      color: $color-primary;
+      font-weight: 700;
+      font-size: 3.8rem;
+      font-family: $font-headings;
+    }
+
+    .nav {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-left: auto;
+
+      &-item {
+        list-style-type: none;
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      &-link {
+        color: $color-black;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  @include overlayedBgImage('hero-image.jpg', 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .title {
+    font-family: $font-headings;
+    font-weight: 700;
+    font-size: 5.4rem;
+    color: $color-white;
+
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    min-height: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+}
